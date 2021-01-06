@@ -1,14 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content" />-->
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20sp"
+        android:layout_height="60dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/myProfilename"
+            android:layout_width="50dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="1sp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/noimg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/TVINSTANAME"
+            android:layout_width="177dp"
+            android:text="instaname"
+            android:layout_margin="15sp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_more_vert_24px"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainbar"
+        android:layout_width="match_parent"
+        android:weightSum="6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="310dp">
+
+        <ImageView
+            android:id="@+id/myimage"
+            android:src="@drawable/noimg"
+            android:layout_marginTop="5sp"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+
+        <ImageButton
+            android:id="@+id/imglove"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_favorite_border_24px"
+            android:layout_weight="1">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/imgcomment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_comment_24px"
+            android:layout_weight="1">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/imgshare"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_reply_24px"
+            android:layout_weight="1">
+        </ImageButton>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20sp"
+        android:layout_height="25dp">
+
+        <TextView
+            android:id="@+id/TvLikes"
+            android:text="44K Likes,"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/Tvcaption"
+            android:text="VijayDevarkonda: #Dear comrade, #Arjun Reddy, #Geetha Govindam, #My all best blockbuster moview"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+
+        <ImageButton
+            android:id="@+id/imghome"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_home_24px"
+            android:layout_weight="1">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/imgsearch"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search_24px"
+            android:layout_weight="1">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/imgcamera"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_add_circle_outline_24px"
+            android:layout_weight="1">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/imgreact"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_shopping_basket_24px"
+            android:layout_weight="1">
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/imgprofile"
+            android:layout_width="0dp"
+            android:layout_height="40sp"
+            android:src="@drawable/ic_account_circle_24px"
+            android:layout_weight="1">
+        </ImageButton>
+    </LinearLayout>
+
+
+
 
 </LinearLayout>

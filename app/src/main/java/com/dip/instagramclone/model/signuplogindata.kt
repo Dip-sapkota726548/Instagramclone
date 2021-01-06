@@ -3,13 +3,13 @@ package com.dip.instagramclone.model
 import java.io.Serializable
 
 data class signuplogindata(
-    val username:String?=null,
-    val password:String?=null,
-    val coventryId: String? =null,
-    val fName:String?=null,
-    val lname:String?=null,
-    val batchname:String?=null,
-    val profilepicture:String?=null
+    var coventryId: Int? = null,
+    var fName:String? = null,
+    var lname:String? = null,
+    var username:String? = null,
+    var password:String? = null,
+    var batchname:String? = null,
+    var profilepicture:String? = null
 
 ): Serializable{
 

@@ -61,24 +61,15 @@ class SignUpActivity : AppCompatActivity() {
 
         //intent with other activity
 
-//        btnsignup.setOnClickListener(object: View.OnClickListener{
-//            override fun onClick(v: View?) {
-//
-//                val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
-//
-//                startActivity(intent)
-//            }
-//        })
-
         btnsignup.setOnClickListener {
-            val intent = Intent()
-            var addr = signuplogindata(edusername.text.toString(),ETPASSWORD.text.toString());
-            intent.putExtra("abc",addr)
-            //intent.putExtra("abc",addr)
+            var intent = Intent();
+            var user = signuplogindata(
+                10254839, edfirstname.text.toString(), edlastname.text.toString(), edusername.text.toString(),
+                ETPASSWORD.text.toString());
+
+            intent.putExtra("tag", user)
             setResult(Activity.RESULT_OK, intent)
             finish()
         }
     }
-
-
 }

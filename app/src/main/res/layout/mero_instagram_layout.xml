@@ -6,221 +6,40 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/topbar"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_height="@dimen/bar_height">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_camera_alt_24px"
-            android:layout_height="match_parent">
 
-        </ImageButton>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/instagram"
-            android:padding="5dp"
-            android:layout_weight="4">
-
-        </ImageView>
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_send_24px"
-            android:layout_weight="1">
-
-        </ImageButton>
-
-    </LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_height="120dp">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/INSTACIRCLEPROFILE"
         android:layout_width="80dp"
-        android:layout_height="95dp"
-        android:src="@drawable/noimg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="17dp" />
+        android:layout_height="90dp"
+        android:src="@drawable/noimg"/>
+
 
     <TextView
         android:id="@+id/TVINSTACLONENAME"
         android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30sp"
-        android:layout_marginLeft="-60dp"
+        android:layout_marginLeft="18dp"
         android:layout_height="wrap_content"
         tools:text="Name"/>
 
-</LinearLayout>
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        android:id="@+id/INSTACIRCLEPROFILE1"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="90dp"-->
+<!--        android:src="@drawable/noimg"/>-->
+<!--       -->
 
+<!--    <TextView-->
+<!--        android:id="@+id/TVINSTACLONENAME1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_marginLeft="18dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:text="Name"/>-->
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="20sp"
-        android:layout_height="60dp">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/myProfilename"
-            android:layout_width="50dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="1sp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/noimg"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="16dp" />
-
-        <TextView
-            android:id="@+id/TVINSTANAME"
-            android:layout_width="177dp"
-            android:text="instaname"
-            android:layout_margin="15sp"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_height="wrap_content"/>
-
-        <ImageButton
-            android:id="@+id/imgsettings"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/noimg"
-            android:layout_weight="1">
-
-        </ImageButton>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/mainbar"
-        android:layout_width="match_parent"
-        android:weightSum="6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_height="310dp">
-
-        <ImageView
-            android:id="@+id/myimage"
-            android:src="@drawable/noimg"
-            android:layout_marginTop="5sp"
-            android:layout_width="match_parent"
-            android:layout_height="310dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp">
-
-        <ImageButton
-            android:id="@+id/imglove"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/noimg"
-            android:layout_weight="1">
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/imgcomment"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/noimg"
-            android:layout_weight="1">
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/imgshare"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/noimg"
-            android:layout_weight="1">
-        </ImageButton>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp">
-
-        <TextView
-            android:id="@+id/TvLikes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp">
-
-        <TextView
-            android:id="@+id/Tvcaption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp">
-
-        <ImageButton
-            android:id="@+id/imghome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_home_24px"
-            android:layout_weight="1">
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/imgsearch"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_search_24px"
-            android:layout_weight="1">
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/imgcamera"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_add_circle_outline_24px"
-            android:layout_weight="1">
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/imgreact"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_shopping_basket_24px"
-            android:layout_weight="1">
-        </ImageButton>
-        <ImageButton
-            android:id="@+id/imgprofile"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_account_circle_24px"
-            android:layout_weight="1">
-        </ImageButton>
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 
 

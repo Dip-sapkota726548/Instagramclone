@@ -1,93 +1,65 @@
 package com.dip.instagramclone.Adapter
-
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.dip.instagramclone.InstagramDashboard
-import com.dip.instagramclone.MainActivity
 import com.dip.instagramclone.R
 import com.dip.instagramclone.model.Instagram
+import com.dip.instagramclone.model.Instastoryclone
 import de.hdodenhof.circleimageview.CircleImageView
+import java.util.ArrayList
 
-class InstaAdapter(
-        val lstInstagram : ArrayList<Instagram>,
-        val  context : Context
-) :
-        RecyclerView.Adapter<InstaAdapter.InstagramViewHolder>() {
-
-    class InstagramViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val myProfilename : CircleImageView
-        val TVINSTANAME : TextView
-        val imgsettings : ImageButton
-        val myimage : ImageView
-        val imglove: ImageButton
-        val imgcomment : ImageButton
-        val imgshare: ImageButton
-        val TvLikes: TextView
-        val Tvcaption: TextView
-
-
-
-
-        init {
-            myProfilename = view.findViewById(R.id.myProfilename)
-            TVINSTANAME = view.findViewById(R.id.TVINSTACLONENAME)
-            imgsettings = view.findViewById(R.id.imgsettings)
-            myimage = view.findViewById(R.id.myimage)
-            imglove = view.findViewById(R.id.imglove)
-            imgcomment = view.findViewById(R.id.imgcomment)
-            imgshare = view.findViewById(R.id.imgshare)
-            TvLikes = view.findViewById(R.id.TvLikes)
-            Tvcaption = view.findViewById(R.id.Tvcaption)
-
-        }
+class InstaAdapter(var context: Context, var post: ArrayList<Instagram>) :
+    RecyclerView.Adapter<PostViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
+        var view = LayoutInflater.from(context).inflate(R.layout.main,parent,false)
+        return PostViewHolder(view);
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InstagramViewHolder {
-        val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.mero_instagram_layout,parent, false)
-        return  InstagramViewHolder(view)
-    }
 
-    override fun onBindViewHolder(holder: InstagramViewHolder, position: Int) {
-        val Instagram = lstInstagram[position]
-        holder.TVINSTANAME.text = Instagram.instaName
-        holder.TvLikes.text = Instagram.instaLikes
-        holder.Tvcaption.text = Instagram.instacaption
-
-
-
-
+    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+//        Picasso.get().load(post.get(position).instaprofilenameURL).into(holder.image)
+//        Picasso.get().load(post.get(position).instaProfileURL).into(holder.postimage)
+//        holder.name?.setText(post.get(position).instaName)
+        var Instagram = post[position]
+        //var Instagram = post[position]
+        holder.name1 .text = Instagram.instaName
+        holder.likes .text = Instagram.instalikes
+        holder.caption .text = Instagram.instacaption
 
         Glide.with(context)
-                //.load(Instagram.instaprofilenameURL)
-                //.load(Instagram.instasettingsURL)
-                .load(Instagram.instaProfileURL)
-               // .load(Instagram.instaloveURL)
-               // .load(Instagram.instacommentsURL)
-                //.load(Instagram.instashareURL)
 
-               .into(holder.myimage,)
+            .load(Instagram.instaProfileURL)
+
+            .into(holder.postimage)
+
+        Glide.with(context)
+            .load(Instagram.instaprofilenameURL)
+        .into(holder.image)
 
 
 
-        /// setting click listener in Recyclerview's items
-//       holder.myimage.setOnClickListener {
-//           // Toast.makeText(context, "${actor.actorName} clicked", Toast.LENGTH_SHORT).show()
-//            val intent = Intent(context,InstagramDashboard::class.java)
-//           intent.putExtra("instagram", Instagram)
-//           context.startActivity(intent)
-//        }
     }
 
     override fun getItemCount(): Int {
-        return lstInstagram.size
+        return post.size
+    }
+}
+class PostViewHolder(view: View) :RecyclerView.ViewHolder(view) {
+     var image : CircleImageView
+    var name1 : TextView
+     var postimage :ImageView
+     var likes : TextView
+     var caption : TextView
+    init {
+        name1=view.findViewById(R.id.TVINSTANAME)
+        postimage=view.findViewById(R.id.myimage)
+        image=view.findViewById(R.id.myProfilename)
+        likes = view.findViewById(R.id.TvLikes)
+        caption = view.findViewById(R.id.Tvcaption)
     }
 }

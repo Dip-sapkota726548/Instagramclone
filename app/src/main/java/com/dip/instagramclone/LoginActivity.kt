@@ -5,10 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.bumptech.glide.Glide
 import com.dip.instagramclone.model.Instagram
 import com.dip.instagramclone.model.signuplogindata
@@ -21,66 +18,49 @@ class LoginActivity : AppCompatActivity() {
 
     private var lstlogin= ArrayList<signuplogindata>()
 
+    var username = "dipsapkota325@gmail.com"
+    var password = "admin"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        lstlogin  = arrayListOf<signuplogindata>()
-
+      lstlogin  = arrayListOf<signuplogindata>()
+        //lstusers = ArrayList()
         edusername = findViewById(R.id.edusername)
         edpassword = findViewById(R.id.edpassword)
         btnlogin = findViewById(R.id.btnlogin)
         Tvsignup = findViewById(R.id.Tvsignup)
 
 
-        Tvsignup.setOnClickListener(object: View.OnClickListener{
-            override fun onClick(v: View?) {
-
-                val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
-
-                startActivity(intent)
-            }
-        })
-
-
-        //maindashboard open
-
+        loadUser()
         btnlogin.setOnClickListener {
-            for(i in lstlogin){
-                if(edusername.text.toString() == i.username && edpassword.text.toString() ==i.password) {
-
-                    val intent = Intent(this@LoginActivity, InstagramDashboard::class.java)
+            var inputName = edusername.text.toString()
+            var inputPassword = edpassword.text.toString()
+            val intent= Intent(this,MainActivity::class.java)
+            if (inputName.isEmpty() || inputPassword.isEmpty()) {
+                Toast.makeText(this, "Fields can't be empty..", Toast.LENGTH_SHORT).show()
+            } else {
+                if (inputName.equals(username) && inputPassword.equals(password))
                     startActivity(intent)
-                    //return@setOnClickListener
+                else {
+                    var status = "Log In Fail"
+                    Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+        Tvsignup.setOnClickListener {
+            startActivity(Intent(this,SignUpActivity::class.java))
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode==1){
-            if(resultCode== Activity.RESULT_OK){
-//                var tvname=data?.getSerializableExtra("name") as instagram
-//                var tvpassword=data?.getSerializableExtra("password") as instagram
-//                var mobile=data?.getSerializableExtra("mobile") as Person
-//                var gender=data?.getSerializableExtra("gender") as Person
-                var address = data?.getSerializableExtra("abc") as signuplogindata
-//                lstActors.add(tvname)
-//                lstActors.add(tvpassword)
-                lstlogin.add(address)
-
-//                                recyclerView.add(address)
-            }
-
-
+        if (requestCode== Activity.RESULT_OK){
+            var users = data?.getSerializableExtra("tag") as signuplogindata
+            lstlogin.add(users)
         }
     }
-
-//        btnlogin.setOnClickListener(object: View.OnClickListener{
-//            override fun onClick(v: View?) {
-//
-//                val intent = Intent(this@LoginActivity, InstagramDashboard::class.java)
-//                startActivity(intent)
-//            }
-//        })
+    private fun loadUser() {
+        lstlogin.add(signuplogindata(10254839,"Dip","Sapkota","dipsapkota325@gmail.com","admin"))
     }
+}
